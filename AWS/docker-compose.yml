@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  wordpress:
+    image: 'bitnami/wordpress:latest'
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - 'wordpress_data:/data/bitnami'
+    environment:
+      - MARIADB_HOST=mariadb
+      - MARIADB_PORT_NUMBER=3306
+      - WORDPRESS_DATABASE_USER=wordpress
+      - WORDPRESS_DATABASE_NAME=wordpress
+      - ALLOW_EMPTY_PASSWORD=yes
+    restart: always
+
+volumes:
+  wordpress_data:
+    driver: local

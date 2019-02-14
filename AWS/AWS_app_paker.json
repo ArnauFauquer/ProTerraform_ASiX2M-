@@ -1,0 +1,61 @@
+{
+  "description": "aws_app_ami",
+  "min_packer_version": "1.3.2",
+  "variables": {
+    "aws_profile": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "profile": "{{ user `aws_profile` }}",
+      "region": "eu-west-1",
+      "source_ami": "ami-09693313102a30b2c",
+      "instance_type": "t2.micro",
+      "ssh_username": "ec2-user",
+      "vpc_id": "vpc-04022a62",
+      "subnet_id": "subnet-7b8a2d21",
+      "ami_name": "aws_app - app {{timestamp}}",
+      "associate_public_ip_address": true,
+      "tags": {
+        "OS_Version": "Amazon Linux 2",
+        "Version": "{{timestamp}}",
+        "Name":"AWS_APP "
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 30",
+        "sudo yum -y upgrade",
+        "sudo yum -y update",
+        "sudo yum -y install net-tools",
+        "sudo yum -y install openssh",
+        "sudo yum -y install wget",
+        "sudo timedatectl set-timezone Europe/Madrid",
+        "sudo yum -y install ntpdate",
+        "sudo systemctl start ntpdate",
+        "sudo systemctl enable ntpdate",
+        "sudo yum install -y yum-utils device-mapper-persistent-data lvm2",
+        "sudo yum -y remove docker",
+        "sudo yum -y remove docker-client",
+        "sudo yum -y remove docker-client-latest",
+        "sudo yum -y remove docker-common",
+        "sudo yum -y remove docker-latest",
+        "sudo yum -y remove docker-latest-logrotate",
+        "sudo yum -y remove docker-logrotate",
+        "sudo yum -y remove docker-selinux",
+        "sudo yum -y remove docker-engine-selinux",
+        "sudo yum -y remove docker-engine",
+        "sudo yum -y remove docker-engine-selinux",
+        "sudo yum-config-manager -y --add-repo https://download.docker.com/linux/centos/docker-ce.repo",
+        "sudo yum -y install http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.68-1.el7.noarch.rpm",
+        "sudo yum -y update",
+        "sudo yum -y install docker-ce",
+        "sudo systemctl enable docker",
+        "sudo systemctl start docker"
+      ]
+    }
+  ]
+}
