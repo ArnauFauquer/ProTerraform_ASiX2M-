@@ -28,7 +28,7 @@ resource "aws_subnet" "aws_subnet_pub" {
   map_public_ip_on_launch = true
   
   tags ={
-    Name= "AWS_subnet_pub[count.index]"
+    Name= "AWS_subnet_pub $[count.index]"
   }
 
 }
@@ -44,6 +44,6 @@ resource "aws_subnet" "aws_subnet_prib" {
   map_public_ip_on_launch = false
 
   tags = {
-    Name= "AWS_subnet_prib[count.index]"
+    Name= "AWS_subnet_prib $[count.index]"
   }
 }
