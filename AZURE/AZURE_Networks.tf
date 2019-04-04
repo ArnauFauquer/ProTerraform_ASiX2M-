@@ -13,7 +13,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = "$interface-nic"
+  name                = "net-in"
   location            = "${azurerm_resource_group.main.location}"
   resource_group_name = "${azurerm_resource_group.main.name}"
 
@@ -21,5 +21,12 @@ resource "azurerm_network_interface" "main" {
     name                          = "NetworkIP"
     subnet_id                     = "${azurerm_subnet.internal.id}"
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id = "${azurerm_public_ip.ip-p.id}"
   }
+}
+resource "azurerm_public_ip" "ip-p"{
+  name = "test-pip"
+  location = "${azurerm_resource_group.main.location}"
+  resource_group_name = "${azurerm_resource_group.main.name}"
+  allocation_method = "Dynamic"
 }

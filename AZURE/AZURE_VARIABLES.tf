@@ -1,8 +1,10 @@
 variable "PasswordMV" {
-  string="Password1234!"
+  type = "string"
+  default = "Password1234!"
 }
 
 variable "NameUser" {
-  string="Azure_User"
+  type = "string"
+  default = "Azure_User"
 }
 
