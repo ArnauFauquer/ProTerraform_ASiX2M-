@@ -15,9 +15,14 @@ resource "azurerm_virtual_machine" "main" {
 
   provisioner "remote-exec" {
     inline = [
-    "sudo apt-get install apache2 -y"
+      "sudo apt-get install apache2 -y"
     ]
   }
+  provisioner "file" {
+    source     = "docker-compose.yaml"
+    destination = "~/docker-compose.yaml"
+  }
+
   connection {
     type     = "ssh"
     user     = "${var.NameUser}"
