@@ -8,3 +8,12 @@ variable "NameUser" {
   default = "Azure_User"
 }
 
+variable "sqluser" {
+  type = "string"
+  default = "SQLUser"
+}
+
+variable "sqlpass" {
+  type = "string"
+  default = "SQLUser"
+}
