@@ -27,27 +27,10 @@ resource "aws_lb_target_group_attachment" "http" {
   port = "80"
 }
 
-
-resource "aws_lb_listener" "RedirectawsApp" {
-  load_balancer_arn = "${aws_lb.aws-alb.arn}"
-  port = "443"
-  protocol = "HTTPs"
-
-  default_action {
-    type = "redirect"
-
-    redirect {
-      port = "80"
-      protocol = "HTTP"
-      status_code = "HTTP_301"
-    }
-  }
-}
-
 resource "aws_lb_listener" "forward-aws-app" {
   load_balancer_arn = "${aws_lb.aws-alb.arn}"
   port              = "80"
-  protocol          = "HTTPS"
+  protocol          = "HTTP"
 
   default_action {
     type             = "forward"

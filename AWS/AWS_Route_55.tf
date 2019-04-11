@@ -1,4 +1,4 @@
-resource "aws_route53_zone" "aws_private_zone" {
+resource "aws_route53_zone" "aws_pro_private_zone" {
   name = "projecte.local"
 
   vpc {
@@ -7,7 +7,7 @@ resource "aws_route53_zone" "aws_private_zone" {
 }
 
 resource "aws_route53_record" "www" {
-  zone_id = "${aws_route53_zone.aws_private_zone.zone_id}"
+  zone_id = "${aws_route53_zone.aws_pro_private_zone.zone_id}"
   name    = "rds"
   type    = "CNAME"
   ttl     = "300"

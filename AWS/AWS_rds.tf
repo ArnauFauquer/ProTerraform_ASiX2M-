@@ -1,17 +1,15 @@
 resource "aws_db_instance" "aws_mysql_app" {
   allocated_storage    = 20
-  storage_type         = "standard"
   engine               = "mysql"
   identifier = "aws-mysql-app"
   engine_version       = "8.0"
-  instance_class       = "db.t3.micro"
+  instance_class       = "db.t2.micro"
   name                 = "mydb"
   username             = "${var.mysql-login}"
   password             = "${var.mysql-passwd}"
   db_subnet_group_name = "${aws_db_subnet_group.aws_db_subnet.name}"
   vpc_security_group_ids = ["${aws_security_group.aws_db.id}"]
   deletion_protection  = false
-  publicly_accessible  = true
 
   tags {
     Name = "AWS_mysql_app"
