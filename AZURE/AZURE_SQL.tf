@@ -1,13 +1,13 @@
-resource "azurerm_mysql_server" "main" {
-  name                         = "mysqlserver"
+resource "azurerm_mysql_server" "sql" {
+  name                  = "databasewordpress"
   location              = "${azurerm_resource_group.main.location}"
   resource_group_name   = "${azurerm_resource_group.main.name}"
 
   sku {
-    name     = "B_Gen4_2"
-    capacity = 2
-    tier     = "Basic"
-    family   = "Gen4"
+    name     = "GP_Gen5_8"
+    capacity = 8
+    tier     = "GeneralPurpose"
+    family   = "Gen5"
   }
 
   storage_profile {
@@ -22,10 +22,11 @@ administrator_login_password = "${var.sqlpass}"
   ssl_enforcement              = "Enabled"
 }
 
-resource "azurerm_mysql_database" "main" {
+resource "azurerm_mysql_database" "database_wordpress" {
   name                = "wordpress"
   resource_group_name = "${azurerm_resource_group.main.name}"
-  server_name         = "${azurerm_mysql_server.main.name}"
+  server_name         = "${azurerm_mysql_server.sql.name}"
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
+
 }

@@ -15,5 +15,5 @@ variable "sqluser" {
 
 variable "sqlpass" {
   type = "string"
-  default = "SQLUser"
+  default = "Password.1234!"
 }
