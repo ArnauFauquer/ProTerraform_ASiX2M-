@@ -1,5 +1,11 @@
 provider "google" {
-  credentials = "${file("~/My First Project-c3697c044f8b.json")}"
-  project     = "arched-symbol-231409"
-  region      = "eu-west-1"
+  credentials = "${file("~/Tranxfer-8a3c7661b864.json")}"
+  project     = "terraform-240809"
+  region      = "${var.GPC_main_region}}"
 }
+
+variable "GPC_main_region" {
+  type = "string"
+  default = "europe-west1-b"
+}
+

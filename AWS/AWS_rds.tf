@@ -4,7 +4,7 @@ resource "aws_db_instance" "aws_mysql_app" {
   identifier = "aws-mysql-app"
   engine_version       = "8.0"
   instance_class       = "db.t2.micro"
-  name                 = "mydb"
+  name                 = "wordpress"
   username             = "${var.mysql-login}"
   password             = "${var.mysql-passwd}"
   db_subnet_group_name = "${aws_db_subnet_group.aws_db_subnet.name}"
