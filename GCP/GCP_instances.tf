@@ -5,9 +5,10 @@ resource "google_compute_instance" "vm_instance" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "ubuntu-1804-bionic-v20190514"
     }
   }
+  metadata_startup_script = "sudo apt install docker -y; sudo apt install docker-compose -y"
 
   network_interface {
     # A default network is created for all GCP projects

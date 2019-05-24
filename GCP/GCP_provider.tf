@@ -1,5 +1,6 @@
 provider "google" {
-  credentials = "${file("~/Tranxfer-8a3c7661b864.json")}"
+  #redentials = "${file("~/Tranxfer-8a3c7661b864.json")}"
+  credentials = "${file("Terraform-159604c0f4c0.json")}"
   project     = "terraform-240809"
   region      = "${var.GPC_main_region}}"
 }
