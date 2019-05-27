@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe68904b-f8be-4e66-bac4-303ff5fda455" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GCP/GCP_vpc.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS/AWS_app_paker.json" beforeDir="false" afterPath="$PROJECT_DIR$/AWS/AWS_app_paker.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS/AWS_data.tf" beforeDir="false" afterPath="$PROJECT_DIR$/AWS/AWS_data.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS/AWS_instances.tf" beforeDir="false" afterPath="$PROJECT_DIR$/AWS/AWS_instances.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AWS/AWS_rds.tf" beforeDir="false" afterPath="$PROJECT_DIR$/AWS/AWS_rds.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GCP/GCP_instances.tf" beforeDir="false" afterPath="$PROJECT_DIR$/GCP/GCP_instances.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GCP/GCP_provider.tf" beforeDir="false" afterPath="$PROJECT_DIR$/GCP/GCP_provider.tf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GCP/GCP_vpc.tf" beforeDir="false" afterPath="$PROJECT_DIR$/GCP/GCP_vpc.tf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCP/GCP_provider.tf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -35,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GCP/GCP_instances.tf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -44,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GCP/GCP_vpc.tf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -82,8 +77,9 @@
         <option value="$PROJECT_DIR$/AWS/AWS_app_paker.json" />
         <option value="$PROJECT_DIR$/AWS/AWS_data.tf" />
         <option value="$PROJECT_DIR$/AWS/AWS_instances.tf" />
-        <option value="$PROJECT_DIR$/GCP/GCP_instances.tf" />
+        <option value="$PROJECT_DIR$/GCP/GCP_vpc.tf" />
         <option value="$PROJECT_DIR$/GCP/GCP_provider.tf" />
+        <option value="$PROJECT_DIR$/GCP/GCP_instances.tf" />
       </list>
     </option>
   </component>
@@ -115,8 +111,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -146,7 +142,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Terraform.Plan google_compute_instance.vm_instance">
+  <component name="RunManager" selected="Terraform.Apply google_compute_network.vpc_network">
     <configuration name="Apply aws_instance.aws_test app (1)" type="#org.intellij.plugins.hcl.terraform.run.TerraformConfigurationType" factoryName="Terraform Apply" temporary="true" nameIsGenerated="true">
       <option name="PROGRAM_PARAMETERS" value="apply -target=aws_instance.aws_test app" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/AWS" />
@@ -159,6 +155,12 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <method v="2" />
     </configuration>
+    <configuration name="Apply google_compute_network.vpc_network" type="#org.intellij.plugins.hcl.terraform.run.TerraformConfigurationType" factoryName="Terraform Apply" temporary="true" nameIsGenerated="true">
+      <option name="PROGRAM_PARAMETERS" value="apply -target=google_compute_network.vpc_network" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/GCP" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <method v="2" />
+    </configuration>
     <configuration name="Plan google_compute_instance.vm_instance" type="#org.intellij.plugins.hcl.terraform.run.TerraformConfigurationType" factoryName="Terraform Plan" temporary="true" nameIsGenerated="true">
       <option name="PROGRAM_PARAMETERS" value="plan -target=google_compute_instance.vm_instance" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/GCP" />
@@ -167,6 +169,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Terraform.Apply google_compute_network.vpc_network" />
         <item itemvalue="Terraform.Plan google_compute_instance.vm_instance" />
         <item itemvalue="Terraform.Apply aws_instance.aws_test app (1)" />
         <item itemvalue="Terraform.Apply aws_instance.aws_test app" />
@@ -188,12 +191,13 @@
       <workItem from="1557996961672" duration="732000" />
       <workItem from="1558452396031" duration="2549000" />
       <workItem from="1558527580975" duration="699000" />
-      <workItem from="1558604256994" duration="429000" />
+      <workItem from="1558604256994" duration="5397000" />
+      <workItem from="1558679254232" duration="1131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17995000" />
+    <option name="totallyTimeSpent" value="24094000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -207,7 +211,7 @@
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13779746" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13945766" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -217,14 +221,14 @@
       <window_info id="Azure Explorer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.7311015" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45464364" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32829374" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.39200863" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32937366" />
       <window_info anchor="bottom" id="Azure Activity Log" order="10" />
       <window_info anchor="bottom" id="Cosmos Serverless Spark Jobs" order="11" />
       <window_info anchor="bottom" id="Docker" order="12" />
@@ -247,9 +251,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/AZURE/AZURE_Networking" />
     <entry file="file://$PROJECT_DIR$/AZURE/AZURE_Networks" />
-    <entry file="file://$PROJECT_DIR$/AWS/AWS_keys.tf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/AWS/AWS_keys.tf" />
     <entry file="file://$PROJECT_DIR$/AWS/AWS_rds.tf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -319,24 +321,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCP/GCP_provider.tf">
+    <entry file="file://$PROJECT_DIR$/GCP/GCP_vpc.tf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GCP/GCP_vpc.tf">
+    <entry file="file://$PROJECT_DIR$/GCP/GCP_provider.tf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GCP/GCP_instances.tf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
