@@ -17,3 +17,8 @@ variable "sqlpass" {
   type = "string"
   default = "Password.1234!"
 }
+
+variable "AD_pass" {
+  type = "string"
+  default = "Password.1234!"
+}

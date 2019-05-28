@@ -28,5 +28,4 @@ resource "azurerm_mysql_database" "database_wordpress" {
   server_name         = "${azurerm_mysql_server.sql.name}"
   charset             = "utf8"
   collation           = "utf8_unicode_ci"
-
 }
